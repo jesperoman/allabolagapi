@@ -14,3 +14,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+.*.swp
+
+# Ignore stupid osx files
+.DS_Store
