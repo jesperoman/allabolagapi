@@ -1,5 +1,7 @@
 class Cache < ActiveRecord::Base
   extend AllabolagConnector
+  validates :name, presence: true
+  validates :orgnr, presence: true
   def self.fetch(query)
     @cache = Cache.where("name LIKE ?", "#{query}%").take
     if @cache
