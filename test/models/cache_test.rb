@@ -1,20 +1,28 @@
 require 'test_helper'
 
 class CacheTest < ActiveSupport::TestCase
-  test "should not save orgnr without name" do
-    cache = Cache.new({orgnr: "123456789"})
+  test 'should not save org nr without name' do
+    cache = Cache.new({orgnr: '123456789'})
     assert !cache.save
   end
-  test "should not save name without orgnr" do
-    cache = Cache.new({name: "Company"})
+  test 'should not save name without org nr' do
+    cache = Cache.new({name: 'Company'})
     assert !cache.save
   end
-  test "should not save nothing" do
+  test 'should not save nothing' do
     cache = Cache.new
     assert !cache.save
   end
-  test "should save correct" do
-    cache = Cache.new({name: "Company", orgnr: "123456789"})
+  test 'should save correct' do
+    cache = Cache.new({name: 'Company', orgnr: '123456789'})
     assert cache.save
+  end
+
+  test 'when in cache do not search' do
+    dummy = {name: 'Dummy', orgnr: '0000000000'}
+    cache = Cache.new(dummy)
+    cache.save
+    response = Cache.fetch('dummy')
+    assert_equal(dummy, response)
   end
 end

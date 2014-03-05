@@ -3,7 +3,7 @@ class Cache < ActiveRecord::Base
   validates :name, presence: true
   validates :orgnr, presence: true
   def self.fetch(query)
-    @cache = Cache.where("name LIKE ?", "#{query}%").take
+    @cache = Cache.where('name LIKE ?', '#{query}%').take
     if @cache
       @result = @cache
     else

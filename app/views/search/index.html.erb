@@ -4,6 +4,10 @@
   <%= submit_tag "Search" %>
 <% end %>
 <% if @result %>
-  
+  <% if @result[:name] %>
   <p><%= @result[:name] %>:<%= @result[:orgnr] %></p>
+
+  <% elsif @result[:error] %>
+    <p>Error: <%= @result[:error] %></p>
+  <% end %>
 <% end %>
