@@ -6,9 +6,9 @@ end
 
 class AllabolagConnectorTest < ActionController::TestCase
   test 'extract data' do
-    response = 'aksjdhkajshd§123456789/Mejsla title="Mejsla AB"'
-    actual = CacheDummy.extract_data(response, 'mejsla')
-    expected = {orgnr: '123456789', name: 'Mejsla AB'}
+    response = 'aksjdhkajshd§123456789/Company_AB title="Company AB"'
+    actual = CacheDummy.extract_data(response, 'company')
+    expected = {orgnr: '123456789', name: 'Company AB'}
     assert_equal(actual, expected)
   end
 

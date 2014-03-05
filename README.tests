@@ -1,0 +1,12 @@
+Utestående tester:
+
+Införa rspec för tester
+
+Testa sökningar med cache och utan cache
+Verifiera att cachen används
+
+Testa controllern, så att den svarar med xml och json
+Samt de felmeddelanden som kan komma
+
+Testa klient-klassens olika metoder
+

@@ -18,11 +18,5 @@ class CacheTest < ActiveSupport::TestCase
     assert cache.save
   end
 
-  test 'when in cache do not search' do
-    dummy = {name: 'Dummy', orgnr: '0000000000'}
-    cache = Cache.new(dummy)
-    cache.save
-    response = Cache.fetch('dummy')
-    assert_equal(dummy, response)
-  end
+
 end
